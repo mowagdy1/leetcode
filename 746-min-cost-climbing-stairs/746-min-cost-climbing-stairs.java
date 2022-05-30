@@ -14,13 +14,7 @@ class Solution {
                     currentCost = cost[i];
                 }
                 
-                int temp1 = steps[i-1] + currentCost;
-                int temp2 = steps[i-2] + currentCost;
-                if(temp2<temp1){
-                    steps[i] = temp2;
-                }else{
-                    steps[i] = temp1;
-                }
+                steps[i] = Math.min(steps[i-1]+currentCost, steps[i-2]+currentCost);
             }
         }
         
